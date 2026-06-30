@@ -1,0 +1,62 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #11
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void ReadMarks(float& Mark1, float& Mark2, float& Mark3) {
+
+	cout << "Enter Mark 1: ";
+	cin >> Mark1;
+	cout << endl;
+
+	cout << "Enter Mark 2: ";
+	cin >> Mark2;
+	cout << endl;
+
+	cout << "Enter Mark 3: ";
+	cin >> Mark3;
+	cout << endl;
+
+}
+float SumMarks(float Mark1, float Mark2, float Mark3) {
+
+	float Sum = (Mark1 + Mark2 + Mark3);
+	return Sum;
+
+}
+
+float CalculateAvarage(float Mark1, float Mark2, float Mark3) {
+
+	float Avarage = SumMarks(Mark1, Mark2, Mark3) / 3;
+	return Avarage;
+}
+
+void PrintResult(float avarage) {
+
+	if (avarage >= 50) {
+	 cout << "The Avarage is: " << avarage << " , the student is passed";
+	}
+	else {
+		cout << "The Avarage is: " << avarage << " , the student is failed";
+
+	}
+
+
+}
+
+int main() {
+	float Mark1, Mark2, Mark3;
+
+	ReadMarks(Mark1, Mark2, Mark3);
+
+	PrintResult(CalculateAvarage(Mark1, Mark2, Mark3));
+
+	return 0;
+}
