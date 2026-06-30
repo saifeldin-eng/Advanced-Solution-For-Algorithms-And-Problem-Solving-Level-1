@@ -1,0 +1,45 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #8
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+float readMark() {
+	
+	float mark;
+do {
+	cout << "Enter Your Mark: ";
+	cin >> mark;
+} while (mark < 0 || mark > 100);
+
+return mark;
+
+}
+string getStudentStatus(float mark) {
+
+	if (mark >= 50) {
+		return "Passed";
+	}
+	else {
+		return "Failed";
+	}
+
+}
+void PrintResult(float mark) {
+
+	cout << " The Student is " << getStudentStatus(mark);
+}
+
+int main() {
+
+	PrintResult(readMark());
+
+
+	return 0;
+}
