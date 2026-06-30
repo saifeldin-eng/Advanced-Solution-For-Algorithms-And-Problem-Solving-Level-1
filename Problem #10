@@ -1,0 +1,48 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #10
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Read3Marks(float& Mark1, float& Mark2, float& Mark3) {
+
+	cout << "Enter Mark 1: ";
+	cin >> Mark1;
+	cout << endl;
+
+	cout << "Enter Mark 2: ";
+	cin >> Mark2;
+	cout << endl;
+
+	cout << "Enter Mark 3: ";
+	cin >> Mark3;
+	cout << endl;
+
+}
+float Avarage3Marks(float Mark1, float Mark2, float Mark3) {
+
+	float result = (Mark1 + Mark2 + Mark3) / 3;
+	return result;
+
+}
+void PrintResult(float num1, float num2, float num3) {
+
+	cout << "The Avarage: " << Avarage3Marks(num1, num2, num3);
+
+
+}
+
+int main() {
+	float Mark1, Mark2, Mark3;
+
+	Read3Marks(Mark1, Mark2, Mark3);
+	PrintResult(Mark1, Mark2, Mark3);
+
+	return 0;
+}
