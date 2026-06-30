@@ -1,0 +1,57 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #40
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+float ReadPositiveNumber(string Message) {
+	
+	float number = 0;
+	do 
+	{
+		cout << Message;
+		cin >> number;
+		cout << endl;
+
+	} while (number <= 0);
+	
+
+	return number;
+}
+
+float ServiceFree(){
+
+	return 1.10;
+}
+float SalesTax(){
+
+	return 1.16;
+}
+
+float TotalBill(float BillValue) {
+
+	return	((ServiceFree() * BillValue) * SalesTax());
+}
+void PrintBillWithServiceFeeAndTax(int BillValue) {
+
+	cout << "Service Fee:  " << (ServiceFree() - 1) * 100 << "%" << endl;
+	cout << "Sales Tax:  " << (SalesTax() - 1) * 100 << "%" << endl;
+	cout << "\n********************* \n";
+	cout <<"Total Bill: " << TotalBill(BillValue) << endl;
+
+}
+
+int main() {
+
+	float BillValue = ReadPositiveNumber("Please Enter Bill Value: ");
+
+	PrintBillWithServiceFeeAndTax(BillValue);
+	
+}
