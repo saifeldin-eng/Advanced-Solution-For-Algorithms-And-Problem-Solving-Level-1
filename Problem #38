@@ -1,0 +1,72 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #38
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+enum  enPrimeOrNot {Prime,NotPrime};
+
+int ReadNumber(string Message) {
+	
+	float number = 0;
+
+	cout << Message;
+	cin >> number;
+	cout << endl;
+
+	return number;
+}
+
+enPrimeOrNot CheckPrimeNumber(int num) {
+
+	int HalfNum = num / 2;
+
+	if (num == 1)
+		return enPrimeOrNot::NotPrime;
+	else if (num == 2)
+		return enPrimeOrNot::Prime;
+
+	for (int i = 1; i <= HalfNum; i++) {
+		
+		if (num % i == 0) {
+			return enPrimeOrNot::NotPrime;
+		}
+	}
+        return enPrimeOrNot::Prime;
+}
+
+string ResultOfCheck(enPrimeOrNot PrimeOrNot) {
+
+	switch (PrimeOrNot) {
+	case enPrimeOrNot::Prime:
+		return "Prime Number";
+	case enPrimeOrNot::NotPrime:
+		return "Not Prime Number";
+	default:
+		return "Eror in Result Function";
+	}
+
+}
+
+void PrimeOrNot(int num) {
+
+	string result = ResultOfCheck(CheckPrimeNumber(num));
+
+	cout << "The Number " << num << " is " << result << endl;;
+
+}
+
+int main() {
+
+	int number = ReadNumber("Please Enter Your Number: ");
+
+	PrimeOrNot(number);
+
+}
