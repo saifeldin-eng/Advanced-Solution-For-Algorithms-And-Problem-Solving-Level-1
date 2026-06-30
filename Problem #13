@@ -1,0 +1,69 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #13
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void ReadNum(int &num1, int &num2 , int &num3) {
+
+	cout << "Enter The First Number: ";
+	cin >> num1;
+	cout << endl;
+
+	cout << "Enter The Second Number: ";
+	cin >> num2;
+	cout << endl;
+
+	cout << "Enter The Third Number: ";
+	cin >> num3;
+	cout << endl;
+
+}
+
+int MaxNumCheck(int num1, int num2 , int num3) {
+
+	if (num1 > num2)
+	{
+		if (num1 > num3) {
+
+			return num1;
+		}
+		else {
+			return num3;
+		}
+	}
+	else if (num2 > num3) {
+		return num2;
+	}
+	else {
+		return num3;
+	}
+	
+	
+
+	
+
+
+}
+
+void PrintMaxNum(int maxNum) {
+	
+	cout << maxNum;
+}
+
+int main() {
+	int num1, num2 , num3;
+
+	ReadNum(num1, num2 , num3);
+	PrintMaxNum(MaxNumCheck(num1, num2 , num3));
+
+
+
+	return 0;
+}
