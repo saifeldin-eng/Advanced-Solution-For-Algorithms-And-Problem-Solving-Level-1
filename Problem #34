@@ -1,0 +1,52 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #34
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int ReadTotalSales() {
+
+	int TotalSales;
+
+	do{
+		cout << "Please Enter Total Sales: ";
+		cin >> TotalSales;
+		cout << endl;
+	} while (TotalSales < 0);
+
+	return TotalSales;
+}
+
+int ComissionPercentage(int TotalSales){
+
+	if (TotalSales >= 1000000)
+		return TotalSales * 0.01;
+
+	else if (TotalSales >= 500000)
+		return TotalSales * 0.02;
+
+	else if (TotalSales >= 100000)
+		return TotalSales * 0.03;
+
+	else if (TotalSales >= 50000)
+		return TotalSales * 0.05;
+
+	else
+		return 0;
+
+}
+
+int main() {
+
+
+	cout << ComissionPercentage(ReadTotalSales()) << endl;
+
+	return 0;
+}
