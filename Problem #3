@@ -1,0 +1,36 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #3
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int ReadNum() {
+	int num;
+	cout << "Enter Your Number: ";
+	cin >> num;
+	return num;
+}
+void evenOddCheck(int num) {
+
+	if ((num % 2) == 0) {
+
+		cout << "The Number is: even";
+	}
+	else if ((num % 2) == 1) {
+		cout << "The Number is: odd";
+	}
+}
+
+int main() {
+	
+ evenOddCheck(ReadNum());
+	
+	
+}
