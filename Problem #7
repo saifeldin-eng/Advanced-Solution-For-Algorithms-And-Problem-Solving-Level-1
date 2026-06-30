@@ -1,0 +1,53 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #7
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct stEnteredNumAndItHalf {
+
+	float EnteredNumber;
+	float HalfNumber;
+};
+stEnteredNumAndItHalf ReadNumber() {
+
+	stEnteredNumAndItHalf NumAndItHalf;
+
+	
+
+	cout << "Enter Your Number: ";
+	cin >> NumAndItHalf.EnteredNumber;
+	cout << endl;
+
+	return NumAndItHalf;
+}
+stEnteredNumAndItHalf HalfNumber(stEnteredNumAndItHalf NumAndItHalf) {
+
+	NumAndItHalf.HalfNumber = NumAndItHalf.EnteredNumber / 2;
+
+	return NumAndItHalf;
+
+}
+void PrintHalfNumber(stEnteredNumAndItHalf EnteredNumAndItHalf) {
+
+	
+
+	cout << " Half Number of " << EnteredNumAndItHalf.EnteredNumber << " is " << EnteredNumAndItHalf.HalfNumber;
+	cout << endl;
+
+}
+
+int main() {
+
+	PrintHalfNumber(HalfNumber(ReadNumber()));
+
+
+
+	return 0;
+}
