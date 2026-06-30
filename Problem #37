@@ -1,0 +1,48 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #37
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int ReadNumber(string Message) {
+	
+	float number = 0;
+
+	cout << Message;
+	cin >> number;
+	cout << endl;
+
+	return number;
+}
+
+int SumUntilMinus99(int Number) {
+
+	int sumNum = 0;
+
+	while (Number != -99) {
+
+		sumNum += Number;
+
+		cout << "Enter Your Number: ";
+		cin >> Number;
+		cout << endl;
+	}
+	return sumNum;
+}
+
+int main() {
+
+	int Number = ReadNumber("Please Enter Your Number to Sum: ");
+	int sumNum = SumUntilMinus99(Number);
+
+	cout << "Result: " << sumNum << endl;
+
+
+}
