@@ -1,0 +1,74 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #35
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+void ReadPiggyBank(float &pennies, float&Nickles, float&Dimes, float&Quarters, float&Dollars) {
+
+
+	cout << "Enter Total pennies: ";
+	cin >> pennies;
+	cout << endl;
+	cout << "Enter Total Nickles: ";
+	cin >> Nickles;
+	cout << endl;
+	cout << "Enter Total Dimes: ";
+	cin >> Dimes;
+	cout << endl;
+	cout << "Enter Total Quarters: ";
+	cin >> Quarters;
+	cout << endl;
+	cout << "Enter Total Dollars: ";
+	cin >> Dollars;
+	cout << endl;
+
+
+
+
+}
+
+float TotalPennies(float pennies, float Nickles, float Dimes, float Quarters, float Dollars){
+
+	int TotalPennies = 0;
+
+	TotalPennies += pennies;
+	TotalPennies += Nickles *5;
+	TotalPennies += Dimes *10;
+	TotalPennies += Quarters *25;
+	TotalPennies += Dollars *100;
+
+	return TotalPennies;
+}
+
+float TotalDollars(float totalPennies) {
+
+	return totalPennies / 100;
+}
+
+void PrintPiggyBank(float pennies, float Nickles, float Dimes, float Quarters, float Dollars) {
+
+	float totalPennies = TotalPennies(pennies, Nickles, Dimes, Quarters, Dollars);
+
+
+	cout << "Total Pennies = " << totalPennies << endl;
+	cout << "Total Dollars = " << TotalDollars(totalPennies) << endl;
+}
+
+int main() {
+
+	float pennies, Nickles, Dimes, Quarters, Dollars;
+
+	ReadPiggyBank(pennies, Nickles, Dimes, Quarters, Dollars);
+	PrintPiggyBank(pennies, Nickles, Dimes, Quarters, Dollars);
+	
+
+	return 0;
+}
