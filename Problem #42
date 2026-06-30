@@ -1,0 +1,76 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #42
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+float ReadPositiveNumber(string Message) {
+	
+	int number = 0;
+
+	do 
+	{
+		cout << Message;
+		cin >> number;
+		cout << endl;
+
+	} while (number <= 0);
+	
+	return number;
+}
+
+float DaysToSeconds(float Days) {
+	
+	float SecondsPerMinut = 24 * 60 * 60;
+	float Seconds = Days * SecondsPerMinut;
+	
+	return Seconds;
+}
+float HoursToSeconds(float Hour) {
+	
+	float SecondsPerMinut = 60 * 60;
+	float Seconds = Hour * SecondsPerMinut;
+	
+	return Seconds;
+}
+float MinutsToSeconds(float Minuts) {
+	
+	float SecondsPerMinut = 60;
+	float Seconds = Minuts * SecondsPerMinut;
+	
+	return Seconds;
+}
+
+float TotalSeconds(float Days , float Hours , float Minuts, float Seconds) {
+
+	float totalSeconds =
+		  DaysToSeconds(Days)
+		+ HoursToSeconds(Hours)
+		+ MinutsToSeconds(Minuts)
+		+ Seconds;
+
+	return totalSeconds;
+}
+
+int main() {
+
+	float NumberOfDays = ReadPositiveNumber("Enter The Number Of Days: ");
+	float NumberOfHours = ReadPositiveNumber("Enter The Number Of Hours: ");
+	float NumberOfMinuts = ReadPositiveNumber("Enter The Number Of Minuts: ");
+	float NumberOfSeconds = ReadPositiveNumber("Enter The Number Of Seconds: ");
+	
+
+	cout << TotalSeconds(NumberOfDays, NumberOfHours, NumberOfMinuts, NumberOfSeconds) << endl;
+	
+
+
+
+	return 0;
+}
