@@ -1,0 +1,66 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #5
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct strDriverInfo {
+
+	int age = 0;
+	bool hasdreiverLicense = 0;
+	bool hasRecomendation = 0;
+};
+strDriverInfo ReadDriverInfo(){
+ 
+	strDriverInfo DriverInfo;
+
+	cout << "Do you Have Intermediary? (0 or 1): ";
+	cin >> DriverInfo.hasRecomendation;
+	cout << endl;
+
+	if (DriverInfo.hasRecomendation == 0) {
+
+		cout << "Enter Your Age: ";
+		cin >> DriverInfo.age;
+		cout << endl;
+
+		cout << "Do You Have Dreiver License? (0 or 1): ";
+		cin >> DriverInfo.hasdreiverLicense;
+		cout << endl;
+	}
+
+
+	return DriverInfo;
+
+}
+bool CheckInfoAndReturnState(strDriverInfo DriverInfo) {
+	
+	return (DriverInfo.age >= 21 && DriverInfo.hasdreiverLicense || DriverInfo.hasRecomendation);
+}
+void PrintResult(strDriverInfo DreiverInfo) {
+	
+	if (CheckInfoAndReturnState(DreiverInfo)) {
+
+		cout << "\nAccepted\n";
+		
+
+	}
+	else {
+		cout << "\nRejected\n";
+	}
+}
+
+int main() {
+
+
+	PrintResult(ReadDriverInfo());
+
+
+	return 0;
+}
