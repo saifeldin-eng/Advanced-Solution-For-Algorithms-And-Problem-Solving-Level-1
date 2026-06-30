@@ -1,0 +1,84 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #28
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int ReadNumber(){
+
+	int N;
+
+	cout << "Please Enter Your Number: ";
+	cin >> N;
+	cout << endl;
+
+	return N;
+
+}
+
+int SumOddNumFrom1ToN_UsingForLoop(int N) {
+	cout << "\n For Loop \n";
+	int sum = 0;
+	for (int i = 1; i <= N; i= i+2) {
+
+		sum += i;
+	}
+
+	return sum;
+}
+int SumOddNumFrom1ToN_UsingDoWhile(int N){
+
+	cout << "\n Do While Loop \n";
+	int sum = 0;
+	int i = 1;
+	do{
+		
+		sum += i;
+		i = i + 2;
+	
+	} while (i < N);
+
+	return sum;
+}
+int SumOddNumFrom1ToN_UsingWhile(int N){
+
+
+	cout << "\n While Loop \n";
+	int sum = 0;
+	int i = 1;
+
+	while (i < N) {
+
+		
+		sum += i ;
+
+		i = i + 2;
+	
+
+	}
+	return sum;
+
+}
+
+void PrintSumOddNumFrom1ToN(int N) {
+
+	cout << SumOddNumFrom1ToN_UsingForLoop(N) << endl;
+	cout << SumOddNumFrom1ToN_UsingDoWhile(N) << endl;
+	cout << SumOddNumFrom1ToN_UsingWhile(N) << endl;
+}
+
+int main() {
+
+	int Number = ReadNumber();
+
+	
+	PrintSumOddNumFrom1ToN(Number);
+	return 0;
+}
