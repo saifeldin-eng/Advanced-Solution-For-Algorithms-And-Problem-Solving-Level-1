@@ -1,0 +1,126 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #29
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+enum enOddEven{ odd = 1 , even = 2 ,  all = 3 };
+
+int ReadNumber(){
+
+	int N;
+
+	cout << "Please Enter Your Number: ";
+	cin >> N;
+	cout << endl;
+
+	return N;
+
+}
+int SelectSumState(int N) {
+
+	int selector;
+	cout << "[1] Sum Odd Number From 1 To " << N << endl;
+	cout << "[2] Sum Even Number From 1 To " << N << endl;
+	cout << "[3] Sum All Number From 1 To " << N << endl;
+	cout << "Your Choose: ";
+	cin >> selector;
+
+	return selector;
+}
+
+enOddEven CheckSumState(int selector , int num) {
+
+
+
+	if (selector == enOddEven::odd)
+	{
+		if (num % 2 == 1)
+			return enOddEven::odd;
+	}
+	else if (selector == enOddEven::even)
+	{
+		if (num % 2 == 0)
+			return enOddEven::even;
+	}
+	else if (selector == enOddEven::all)
+		return enOddEven::all;
+
+}
+
+int SumNumbers_UsingForLoop(int N) {
+
+	cout << "\n For Loop \n";
+	int sum = 0;
+
+	int selector = SelectSumState(N);
+
+	for (int counter = 1; counter <= N; counter++) {
+	
+		if (CheckSumState(selector,counter) == enOddEven(selector)) {
+
+			sum += counter;
+		}
+	}
+
+	return sum;
+}
+int SumNumbers_UsingDoWhile(int N){
+
+	cout << "\n Do While Loop \n";
+
+	int selector = SelectSumState(N);
+	int sum = 0;
+	int counter = 1;
+	do{
+	
+		if ((CheckSumState(selector, counter) == enOddEven(selector))) {
+			sum += counter;
+		}
+
+	counter++;
+
+	} while (counter <= N);
+
+	return sum;
+}
+int SumNumbers_UsingWhile(int N){
+
+
+	cout << "\n While Loop \n";
+
+	int selector = SelectSumState(N);
+	int sum = 0;
+	int counter = 1;
+
+	while (counter <= N) {
+
+		if (CheckSumState(selector, counter) == enOddEven(selector)) {
+			sum += counter;
+		}
+		counter++;
+
+	}
+	return sum;
+
+}
+
+int main() {
+
+
+	int N = ReadNumber();
+
+
+	cout << SumNumbers_UsingForLoop(N) << endl;
+	cout << SumNumbers_UsingDoWhile(N) << endl;
+	cout << SumNumbers_UsingWhile(N) << endl;
+
+	return 0;
+}
