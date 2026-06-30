@@ -1,0 +1,75 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #44
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+enum enDays { Sunday = 1, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
+
+int ReadPositiveNumber(string Message) {
+
+	int number = 0;
+
+	do
+	{
+		cout << Message;
+		cin >> number;
+		cout << endl;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+enDays NumOfDay(int num) {
+
+	return (enDays)num;
+}
+
+string DayNumToName(enDays Days) {
+
+	switch (Days) {
+
+		case enDays::Sunday:
+		return "Sunday";
+		break;
+		case enDays::Monday:
+		return "Monday";
+		break;
+		case enDays::Tuesday:
+		return "Tuesday";
+		break;
+		case enDays::Wednesday:
+		return "Wednesday";
+		break;
+		case enDays::Thursday:
+		return "Thursday";
+		break;
+		case enDays::Friday:
+		return "Friday";
+		break;
+		case enDays::Saturday:
+		return "Saturday";
+		break;
+		default:
+		return "Not a vaild Day";
+
+	}
+
+}
+
+int main() {
+	
+	int Num = ReadPositiveNumber("Enter The Number Of Day: ");
+
+	cout << "It is: " << DayNumToName(NumOfDay(Num)) << endl;
+
+	return 0;
+}
