@@ -1,0 +1,67 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #24
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+struct stAgeValidation {
+
+	int age;
+	bool validator;
+};
+
+int ReadAge(int &Age)
+{
+
+
+	cout << "Please Enter Your Age: ";
+	cin >> Age;
+	cout << endl;
+
+	return Age;
+
+}
+
+stAgeValidation AgeValidator(int Age) {
+
+	stAgeValidation  AgeValidation;
+
+
+	if (Age >= 18 && Age <= 45)
+	{
+		AgeValidation.validator = true;
+		return AgeValidation;
+	}
+	else
+	{
+		AgeValidation.validator = false;
+
+		return AgeValidation;
+	}
+}
+
+void PrintResult(stAgeValidation AgeValidation , int age) {
+
+	if (AgeValidation.validator == true) {
+		cout <<"Your Age is "<< age << ", Valid Age";
+	}
+	else {
+		cout << "Your Age is " << age << ", Invaild Age";
+
+	}
+}
+
+int main() {
+	stAgeValidation AgeValidation;
+
+	PrintResult(AgeValidator(ReadAge(AgeValidation.age)) , AgeValidation.age);
+	
+	return 0;
+}
