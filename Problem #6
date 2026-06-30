@@ -1,0 +1,47 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #6
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct stFullName {
+
+	string FirstName;
+	string LastName;
+
+};
+
+stFullName ReadFullName() {
+
+	stFullName FullName;
+
+	cout << "Enter Your First Name: ";
+	cin >> FullName.FirstName;
+	cout << endl;
+
+	cout << "Enter Your Last Name: ";
+	cin >> FullName.LastName;
+	cout << endl;
+
+	return FullName;
+}
+
+void PrintFullName(stFullName FullName) {
+
+	cout << "Your Name is " << FullName.FirstName << " " << FullName.LastName << endl;
+}
+
+int main() {
+
+
+	PrintFullName(ReadFullName());
+
+
+	return 0;
+}
