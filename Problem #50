@@ -1,0 +1,74 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #50
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int ReadPINCode(string Message) {
+
+	int number = 0;
+
+	do
+	{
+		cout << Message;
+		cin >> number;
+		cout << endl;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+bool CheckPIN(int PINCode) {
+
+	int AccountPIN = 1234;
+
+	if (PINCode == AccountPIN)
+		return true;
+	else
+		return false;
+}
+
+float Balance() {
+
+	return 7500;
+}
+
+string ATMAccount() {
+
+	int PINCode = 0;
+	int numOfTry = 0;
+	
+	while (numOfTry != 3) {
+
+		PINCode = ReadPINCode("Please Enter PIN Code: ");
+		numOfTry++;
+
+		if (CheckPIN(PINCode))
+			return "Your Balance = "+ to_string(Balance());
+		else
+			cout << "\nWrong PIN Code \n";
+	}
+		 
+
+		return "Your Card Is Locked.";
+		
+
+}
+
+int main() {
+	
+	
+    
+	cout << ATMAccount() << endl;
+	
+
+	return 0;
+}
