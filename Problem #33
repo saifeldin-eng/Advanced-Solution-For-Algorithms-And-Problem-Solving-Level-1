@@ -1,0 +1,81 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #33
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+enum enGrades {A,B,C,D,E,F};
+
+int ReadGrade() {
+
+	int Grade;
+
+	do{
+		cout << "Please Enter Your Grade (0 - 100): ";
+		cin >> Grade;
+		cout << endl;
+	} while (Grade < 0 || Grade > 100);
+
+	return Grade;
+}
+enGrades GradeCheck(int Grade) {
+
+	if (Grade >= 90)
+		return enGrades::A;
+
+	else if (Grade >= 80)
+		return enGrades::B;
+
+	else if (Grade >= 70)
+		return enGrades::C;
+
+	else if (Grade >= 60)
+		return enGrades::D;
+
+	else if (Grade >= 50)
+		return enGrades::E;
+
+	else if (Grade < 50)
+		return enGrades::F;
+
+}
+string GradeToString(int Grade) {
+
+	if (GradeCheck(Grade) == enGrades::A) {
+		return "A";
+	}
+	else if (GradeCheck(Grade) == enGrades::B) {
+		return "B";
+	}
+	else if (GradeCheck(Grade) == enGrades::C) {
+		return "C";
+	}
+	else if (GradeCheck(Grade) == enGrades::D) {
+		return "D";
+	}
+	else if (GradeCheck(Grade) == enGrades::E) {
+		return "E";;
+	}
+	else if (GradeCheck(Grade) == enGrades::F) {
+		return "F";
+	}
+}
+void PrintResult(string Grade) {
+
+	cout << "Your Grade is: " << Grade << endl;
+
+
+}
+
+int main() {
+
+	PrintResult(GradeToString(ReadGrade()));
+	return 0;
+}
