@@ -1,0 +1,59 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #14
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+struct stNumber {
+
+	int num1;
+	int num2;
+};
+stNumber ReadNum() {
+
+	stNumber num;
+	cout << "Enter The First Number: ";
+	cin >> num.num1;
+	cout << endl;
+
+	cout << "Enter The Second Number: ";
+	cin >> num.num2;
+	cout << endl;
+
+	return num;
+
+}
+
+stNumber Swap2Number(stNumber num) {
+
+	
+
+	int temp;
+
+	temp = num.num1;
+	num.num1 = num.num2;
+	num.num2 = temp;
+
+	return num;
+}
+
+void PrintSwapNum(stNumber num) {
+	
+	cout << "The First Number is: " << num.num1 << endl;
+	cout << "The Second Number is: " << num.num2 << endl;
+
+}
+
+int main() {
+
+
+	PrintSwapNum(Swap2Number(ReadNum()));
+
+
+	return 0;
+}
