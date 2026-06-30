@@ -1,0 +1,46 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #17
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+void ReadBaseAndHeight(float & Base, float& Height) {
+
+
+
+	cout << "Enter The Base: ";
+	cin >> Base;
+	cout << endl;
+
+	cout << "Enter The Height: ";
+	cin >> Height;
+	cout << endl;
+
+}
+
+float TringleAreaByBaseAndHeight(float& Base, float& Height) {
+
+	return (Base * Height)/2;
+}
+
+void PrintResult(float TringleArea) {
+
+	cout << "\n Tringle Area = " << TringleArea << endl << endl;
+}
+
+int main() {
+	float Base, Height;
+
+	ReadBaseAndHeight(Base, Height);
+
+	PrintResult(TringleAreaByBaseAndHeight(Base, Height));
+	
+	return 0;
+}
