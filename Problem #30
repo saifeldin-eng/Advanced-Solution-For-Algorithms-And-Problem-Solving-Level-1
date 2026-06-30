@@ -1,0 +1,42 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #30
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int ReadNumber() {
+
+	int num;
+	cout << "Enter Your Number: ";
+	cin >> num;
+	cout << endl;
+
+	return num;
+}
+int factorialOf(int num){
+	int f = 1;
+
+	for (int i = 1; i <= num; i++) {
+		f *= i;
+}
+	return f;
+}
+void PrintResult(int f){
+
+	cout << f << endl;
+}
+
+int main() {
+
+
+	PrintResult(factorialOf(ReadNumber()));
+
+	return 0;
+}
