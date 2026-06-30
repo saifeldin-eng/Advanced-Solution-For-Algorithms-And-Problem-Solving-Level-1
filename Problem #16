@@ -1,0 +1,46 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #16
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+void ReadDiagonalAndSideArea(float & SideArea, float& Diagonal) {
+
+
+
+	cout << "Enter The SideArea: ";
+	cin >> SideArea;
+	cout << endl;
+
+	cout << "Enter The Diagonal: ";
+	cin >> Diagonal;
+	cout << endl;
+
+}
+
+float CalculateRectagleAreaByDiagonalAndSideArea(float SideArea, float Diagonal) {
+
+	return SideArea*sqrt(pow(Diagonal,2) - pow(SideArea,2));
+}
+
+void PrintResult(float RectagleArea) {
+
+	cout << "\n Rectangle Area = " << RectagleArea << endl << endl;
+}
+
+int main() {
+	float Diagonal, SideArea;
+
+	ReadDiagonalAndSideArea(SideArea, Diagonal);
+
+	PrintResult(CalculateRectagleAreaByDiagonalAndSideArea(SideArea, Diagonal));
+	
+	return 0;
+}
