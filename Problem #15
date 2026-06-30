@@ -1,0 +1,45 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #15
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void ReadNum(float &A , float &B) {
+
+
+	cout << "Enter The First Number: ";
+	cin >> A;
+	cout << endl;
+
+	cout << "Enter The Second Number: ";
+	cin >> B;
+	cout << endl;
+
+
+}
+
+float CalculateRectagleArea(float A, float B) {
+
+	return A * B;
+}
+
+void PrintResult(float RectagleArea) {
+
+	cout << "The Rectangle Area is: " << RectagleArea << endl << endl;
+}
+
+int main() {
+	float A, B;
+
+	ReadNum(A, B);
+
+	PrintResult(CalculateRectagleArea(A, B));
+	
+	return 0;
+}
