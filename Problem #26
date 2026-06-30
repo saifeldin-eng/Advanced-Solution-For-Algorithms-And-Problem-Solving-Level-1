@@ -1,0 +1,38 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #26
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int ReadNumber(){
+
+	int N;
+
+	cout << "Please Enter Your Number: ";
+	cin >> N;
+	cout << endl;
+
+	return N;
+
+}
+void PrintFrom1ToNum(int N) {
+
+	for (int i = 1; i <= N; i++) {
+
+		cout << i << endl;
+	}
+}
+
+int main() {
+	
+	PrintFrom1ToNum(ReadNumber());
+	
+	return 0;
+}
