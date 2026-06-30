@@ -1,0 +1,46 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #22
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+void ReadIsoscelesTriangleSides(float &A , float &B) {
+
+
+	cout << "Enter  A: ";
+	cin >> A;
+	cout << endl;
+
+	cout << "Enter  B: ";
+	cin >> B;
+	cout << endl;
+
+}
+
+float CircleAreaByIsoscelesTriangleSides(float a , float b) {
+
+	float PI = 3.14;
+
+	return ((PI * pow(b, 2)) / 4) * ((2 * a - b) / (2 * a + b));
+}
+
+void PrintResult(float CircleArea) {
+
+	cout << "\n Circle Area = " << CircleArea << endl << endl;
+}
+
+int main() {
+	float A, B;
+
+	ReadIsoscelesTriangleSides(A, B);
+	PrintResult(CircleAreaByIsoscelesTriangleSides(A, B));
+	
+	return 0;
+}
