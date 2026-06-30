@@ -1,0 +1,126 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #45
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+enum Month {
+	January = 1
+	, February
+	, March
+	, April
+	, May
+	, June
+	, July
+	, August
+	, September
+	, October
+	, November
+	, December
+};
+
+int ReadPositiveNumber(string Message , int From,int To) {
+
+	int number = 0;
+
+	do
+	{
+		cout << Message;
+		cin >> number;
+		cout << endl;
+
+	} while (number < From || number > To);
+
+	return number;
+}
+
+Month ReadMonthOfYear() {
+
+	return (Month)ReadPositiveNumber("Enter The Number Of Month: " , 1 , 12);
+}
+
+string GetMonthOfYear(int MonthNum) {
+
+	Month month;
+	month = Month(MonthNum);
+
+	if (MonthNum >= 1 && MonthNum <= 6) {
+		switch (month) {
+		case Month::January:
+			return "January";
+			break;
+
+		case Month::February:
+			return "February";
+			break;
+
+		case Month::March:
+			return "March";
+			break;
+
+		case Month::April:
+			return "April";
+			break;
+
+		case Month::May:
+			return "May";
+			break;
+
+		case Month::June:
+			return "June";
+			break;
+		default:
+			return"Eror first if statement";
+		}
+	}
+	else if (MonthNum >= 7 && MonthNum <= 12) {
+
+		switch (month) {
+		case Month::July:
+			return "July";
+			break;
+
+		case Month::August:
+			return "August";
+			break;
+
+		case Month::September:
+			return "September";
+			break;
+
+		case Month::October:
+			return "October";
+			break;
+
+		case Month::November:
+			return "November";
+			break;
+
+		case Month::December:
+			return "December";
+			break;
+		default:
+			return"Eror Eror second if statement";
+		}
+	}
+	else {
+
+		return "Not Available Month.";
+	}
+
+
+}
+
+int main() {
+	
+	cout << GetMonthOfYear(ReadMonthOfYear()) << endl;
+
+	return 0;
+}
