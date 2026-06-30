@@ -1,0 +1,75 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #36
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+struct stCalculatorContent{
+	int firstNumber = 0;
+	int SecondNumber = 0;
+	string Operator = "0";
+};
+
+stCalculatorContent ReadCalculatorComponent() {
+	stCalculatorContent CalculatorContent;
+
+	cout << "Enter The First Number: ";
+	cin >> CalculatorContent.firstNumber;
+	cout << endl;
+	do {
+
+		cout << "Enter The Operator (+ , - , * , / , %): ";
+		cin >> CalculatorContent.Operator;
+		cout << endl;
+
+	}while   (CalculatorContent.Operator != "+" 
+		    && CalculatorContent.Operator != "-" 
+		    && CalculatorContent.Operator != "*" 
+		    && CalculatorContent.Operator != "/" 
+		    && CalculatorContent.Operator != "%");
+	
+
+	cout << "Enter The Second Number: ";
+	cin >> CalculatorContent.SecondNumber;
+	cout << endl;
+
+	return CalculatorContent;
+}
+
+int Calculator(stCalculatorContent CalculatorContent){
+
+	if (CalculatorContent.Operator == "-")
+		return CalculatorContent.firstNumber - CalculatorContent.SecondNumber;
+
+	else if(CalculatorContent.Operator == "+")
+		return CalculatorContent.firstNumber + CalculatorContent.SecondNumber;
+
+	else if(CalculatorContent.Operator == "*")
+		return CalculatorContent.firstNumber * CalculatorContent.SecondNumber;
+
+	else if(CalculatorContent.Operator == "/")
+		return CalculatorContent.firstNumber / CalculatorContent.SecondNumber;
+
+	else if(CalculatorContent.Operator == "%")
+		return CalculatorContent.firstNumber % CalculatorContent.SecondNumber;
+
+
+}
+
+void PrintResult(stCalculatorContent CalculatorContent) {
+
+	cout << Calculator(CalculatorContent) << endl ;
+}
+
+int main() {
+
+	PrintResult(ReadCalculatorComponent());
+
+}
