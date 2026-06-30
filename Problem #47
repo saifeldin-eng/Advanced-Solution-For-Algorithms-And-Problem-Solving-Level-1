@@ -1,0 +1,45 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #47
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int ReadPositiveNumber(string Message) {
+
+	int number = 0;
+
+	do
+	{
+		cout << Message;
+		cin >> number;
+		cout << endl;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+int numOfMonthToSettleTheLoan(int LoanAmount, int MonthlyPayment) {
+
+	return LoanAmount / MonthlyPayment;
+}
+
+int main() {
+	
+	int LoanAmount = ReadPositiveNumber("Enter The Loan Amount: ");
+	int MonthlyPayment = ReadPositiveNumber("Enter The Monthly Payment: ");
+
+	cout << "You need " << numOfMonthToSettleTheLoan(LoanAmount, MonthlyPayment)
+		 << " months to settle the loan."
+		 << endl;
+	
+
+	return 0;
+}
