@@ -1,0 +1,56 @@
+//______________________________________________________________________________________
+// ⚙️ Project      :  Problem #9
+// 👤 Author       :  Saif El-Din Muhannad     
+// 📝 Course       :  Advanced Solution For Algorithms & Problem Solving Level 1
+// 🌐 Course Link  :  https://www.youtube.com/playlist?list=PL3X--QIIK-OEwPmZVfltqCYy6_RuwXr4A
+// 🌐 LinkedIn Url :  https://www.linkedin.com/in/saif-el-din-muhannad-310aab40b?utm_source=share_via&utm_content=profile&utm_medium=member_android
+//________________________________________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct stNums {
+	int num1;
+	int num2;
+	int num3;
+};
+stNums ReadNumbers() {
+
+	stNums nums;
+
+	cout << "Enter First Number: ";
+	cin >> nums.num1;
+	cout << endl;
+
+	cout << "Enter Second Number: ";
+	cin >> nums.num2;
+	cout << endl;
+
+	cout << "Enter Third Number: ";
+	cin >> nums.num3;
+	cout << endl;
+
+	return nums;
+}
+string SumNumbers(stNums Nums) {
+
+	int sum = Nums.num1 + Nums.num2 + Nums.num3;
+	string Result = "the sum of " + to_string(Nums.num1) + ", " + to_string(Nums.num2) + ", " + to_string(Nums.num3) + ", is: " + to_string(sum);
+
+	return Result;
+
+}
+void PrintResult(string Result) {
+
+	cout << Result << endl;
+
+}
+
+int main() {
+
+	PrintResult(SumNumbers(ReadNumbers()));
+
+
+	return 0;
+}
